@@ -91,7 +91,7 @@ def save_to_db(stations):
                 INSERT INTO estaciones
                 (id, brand, nombre, direccion, ciudad, departamento, pais,
                  precio, fuel_type, services, programs,
-                 geom, source, updated_at)
+                 lat,lng, source, updated_at)
                 VALUES (
                     %(id)s,
                     %(brand)s,
