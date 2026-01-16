@@ -9,10 +9,11 @@ from datetime import datetime, timezone
 TERPEL_URL = "https://www.terpel.com/api/map_points/eds"
 
 DB_CONFIG = {
-    "dbname": "fuel_db",
-    "user": "postgres",
-    "password": "admin",
-    "host": "localhost"
+    "dbname": os.getenv("PGDATABASE"),
+    "user": os.getenv("PGUSER"),
+    "password": os.getenv("PGPASSWORD"),
+    "host": os.getenv("PGHOST"),
+    "port": os.getenv("PGPORT", 5432),
 }
 
 
