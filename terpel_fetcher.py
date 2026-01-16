@@ -104,7 +104,8 @@ def save_to_db(stations):
                     %(fuel_type)s,
                     %(services)s,
                     %(programs)s,
-                    ST_SetSRID(ST_MakePoint(%(lng)s, %(lat)s), 4326)::geography,
+                    %(lat)s,
+                    %(lng)s,
                     %(source)s,
                     %(fetched_at)s
                 )
