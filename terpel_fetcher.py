@@ -13,7 +13,8 @@ DB_CONFIG = {
     "user": os.getenv("PGUSER"),
     "password": os.getenv("PGPASSWORD"),
     "host": os.getenv("PGHOST"),
-    "port": os.getenv("PGPORT", 5432),
+    "port": int(os.getenv("PGPORT", 5432)),
+    "sslmode": "require"
 }
 
 
