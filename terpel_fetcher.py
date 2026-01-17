@@ -76,6 +76,13 @@ def normalize_terpel(st):
 
 
 def save_to_db(stations):
+    print("=== DEBUG ===")
+    print("HOST:", os.getenv("PGHOST"))
+    print("PORT:", os.getenv("PGPORT"))
+    print("DB:", os.getenv("PGDATABASE"))
+    print("USER:", os.getenv("PGUSER"))
+    print("==============")
+
     conn = psycopg2.connect(**DB_CONFIG)
 
     try:
