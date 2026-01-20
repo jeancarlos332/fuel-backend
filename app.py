@@ -4,9 +4,19 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 from math import radians, sin, cos, sqrt, atan2
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 app = FastAPI(title="Fuel Prices API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 DB_CONFIG = {
     "dbname": os.getenv("PGDATABASE"),
